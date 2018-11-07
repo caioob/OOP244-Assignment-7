@@ -6,6 +6,7 @@ namespace sict {
 	const int MAX_ROUNDS = 100;
 	class Hero {
 		char heroName[41];
+		char cleaner [2];
 		int hp;
 		int attack;
 	public:
@@ -18,6 +19,6 @@ namespace sict {
         int showHp();
 	};
 	ostream& operator << (ostream&, const Hero&);
-	const Hero& operator* (const Hero&, const Hero&);
+	const Hero operator* (const Hero&, const Hero&);
 };
 #endif
