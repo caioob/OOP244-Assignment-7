@@ -1,7 +1,7 @@
 #ifndef SICT_HERO_H
 #define SICT_HERO_H
 #include <iostream>
-
+using namespace std;
 namespace sict {
 	const int MAX_ROUNDS = 100;
 	class Hero {
@@ -15,9 +15,9 @@ namespace sict {
 		bool isAlive();
 		int attackStrength() const;
 		const char* showName();
-		bool isEmpty();
+        int showHp();
 	};
-	//ostream& operator << (ostream&, const Hero&);
+	ostream& operator << (ostream&, const Hero&);
 	const Hero& operator* (const Hero&, const Hero&);
 };
-#endif 
+#endif
