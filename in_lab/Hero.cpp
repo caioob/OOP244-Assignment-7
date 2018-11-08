@@ -1,16 +1,15 @@
 #include <iostream>
 #include <cstring>
-#include "hero.h"
+#include "Hero.h"
 using namespace std;
 
 namespace sict {
 	Hero::Hero(){
-	    cleaner[0] = '\0';
 		heroName[0] = '\0';
 		hp = 0;
 		attack = 0;
 	}
-	Hero::Hero(char* heroName_, int hp_, int attack_) {
+	Hero::Hero(const char* heroName_, int hp_, int attack_) {
 		if (heroName_[0] == '\0' && hp_ <= 0 && attack <= 0) {
 			heroName[0] = '\0';
 			hp = 0;
@@ -69,8 +68,8 @@ namespace sict {
 		return ostr;
 	}
 
-	const Hero operator*(const Hero& first, const Hero& second){
-		Hero hero1 = first, hero2 = second;
+	const Hero& operator*(const Hero& first, const Hero& second){
+		Hero hero1 = first, hero2 = second, winner;
 		int roundCount = 0;
 
 		for (int i = 0; i < MAX_ROUNDS && (hero1.isAlive() == true && hero2.isAlive() == true); ++i) {
@@ -90,5 +89,6 @@ namespace sict {
 			cout << "Ancient Battle! " << hero1.showName() << " vs " << hero2.showName() << " : Winner is " << hero1.showName() << " in "<< roundCount <<" rounds." << endl;
 			return first;
 		}
+		return first;//it's only here for fixing a compiller warning in matrix's gcc, because the submission scrpits doesn't accept warnings aswell
     }
 }

@@ -5,20 +5,20 @@ using namespace std;
 namespace sict {
 	const int MAX_ROUNDS = 100;
 	class Hero {
-		char heroName[41];
+        char heroName[41];
 		char cleaner [2];
 		int hp;
 		int attack;
 	public:
 		Hero();
-		Hero(char*, int, int);
+		Hero(const char*, int, int);
 		void operator -=(int);
 		bool isAlive();
 		int attackStrength() const;
 		const char* showName();
         int showHp();
 	};
-	ostream& operator << (ostream&, const Hero&);
-	const Hero operator* (const Hero&, const Hero&);
+	//ostream& operator << (ostream&, const Hero&);
+	const Hero& operator* (const Hero&, const Hero&);
 };
 #endif
