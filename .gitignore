@@ -32,3 +32,8 @@
 *.app
 in_lab/ws7/ws7.layout
 in_lab/ws7/ws7.depend
+
+#codeblocks project files
+*.cbp
+*.depend
+*.layout
